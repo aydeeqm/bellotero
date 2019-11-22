@@ -1,9 +1,10 @@
 import React from 'react'
 import { GlobalStyle } from './GlobalStyles'
+import Home from './pages/Home'
 
 export const App = () => (
   <div>
     <GlobalStyle />
-    <h1>Welcome</h1>
+    <Home />
   </div>
 )
