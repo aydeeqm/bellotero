@@ -5,7 +5,7 @@ const Navbar = styled.nav`
   display: flex;
   height: 60px;
   justify-content: space-between;
-  padding: 0 174px;
+  padding: 0 10%;
 `
 
 const NavItem = styled.ul`

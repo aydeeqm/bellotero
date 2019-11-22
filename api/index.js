@@ -1,6 +1,8 @@
 const express = require('express')
 const app = express()
 const menuData = require('./db/menu.json')
+const pageOneData = require('./db/pageOne.json')
+const pageTwoData = require('./db/pageTwo.json')
 
 // Setting
 app.set('port', process.env.PORT || 5000)
@@ -14,6 +16,14 @@ app.get('/', (req, res) => {
 
 app.get('/menu', (req, res) => {
   res.json(menuData)
+})
+
+app.get('/page/1', (req, res) => {
+  res.json(pageOneData)
+})
+
+app.get('/page/2', (req, res) => {
+  res.json(pageTwoData)
 })
 
 // Listen on port 5000
