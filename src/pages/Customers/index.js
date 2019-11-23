@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import { getCustomers } from '../../redux/modules/customers'
-import { WrapperContainer, Container, Title } from './styles'
+import { ArrowLeft, ArrowRight } from '../../components/arrows'
+import './styles.scss'
 
 const Slider = ({ name, position, comment }) => (
   <div className='slider'>
@@ -28,25 +29,24 @@ const PageOne = props => {
   }
 
   return (
-    <WrapperContainer>
-      <Container>
-        {
-          customers.reviews && (
-            <>
-              <h1 className='title'><span>{customers.title}</span></h1>
-              <Slider {...customers.reviews[index]} />
-              <div className='navigate'>
-                <div className='navigate__counter'>{`${index + 1}/${customers.reviews.length}`}</div>
-                <div className='navigate__buttons'>
-                  <button onClick={goToPreview}>Previo</button>
-                  <button onClick={goToNext}>Next</button>
-                </div>
+
+    <div className='container__customer'>
+      {
+        customers.reviews && (
+          <>
+            <h1 className='title'><span>{customers.title}</span></h1>
+            <Slider {...customers.reviews[index]} />
+            <div className='navigate'>
+              <div className='navigate__counter'>{`${index + 1}/${customers.reviews.length}`}</div>
+              <div className='navigate__buttons'>
+                <button onClick={goToPreview}><ArrowLeft /></button>
+                <button onClick={goToNext}><ArrowRight /></button>
               </div>
-            </>
-          )
-        }
-      </Container>
-    </WrapperContainer>
+            </div>
+          </>
+        )
+      }
+    </div>
   )
 }
 

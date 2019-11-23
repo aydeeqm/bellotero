@@ -1,14 +1,12 @@
-import styled from 'styled-components'
-
-const Navbar = styled.nav`
-  background-color: #ffffff;
+.navbar {
+  background-color: var(--white);
   display: flex;
   height: 60px;
   justify-content: space-between;
   padding: 0 10%;
-`
+}
 
-const NavItem = styled.ul`
+.navbar__item {
   display: inline-flex;
 
   & li {
@@ -22,7 +20,7 @@ const NavItem = styled.ul`
 
     & a {
       border-top: solid 4px transparent;
-      color: #071eb3;
+      color: var(--blue);
       font-size: 14px;
       font-weight: 500;
       font-stretch: normal;
@@ -34,22 +32,16 @@ const NavItem = styled.ul`
     }
 
     & a.active {
-      border-top: solid 4px #071eb3;
+      border-top: solid 4px var(--blue);
     }
-  }
-`
+}
+}
 
-const Brand = styled.div`
+.brand {
   align-items: center;
   display: flex;
 
   & a {
     padding: 20px 5px;
   }
-`
-
-export {
-  Navbar,
-  NavItem,
-  Brand
 }

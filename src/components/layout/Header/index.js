@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from '@reach/router'
 import Logo from '../../logo'
-import { Navbar, NavItem, Brand } from './styles'
+import { BlockLoading } from '../../BlockLoading'
+import './styles.scss'
 
 function useMenuData () {
   const [menu, setMenu] = useState([])
@@ -20,8 +21,6 @@ function useMenuData () {
   return { menu, loading }
 }
 
-const BlockLoading = () => <p>Loading...</p>
-
 export const Header = () => {
   const { menu, loading } = useMenuData()
 
@@ -34,7 +33,7 @@ export const Header = () => {
             style: {
               borderTop: isCurrent
                 ? 'solid 4px #071eb3'
-                : 'transparent'
+                : 'solid 4px transparent'
             }
           }
         }}
@@ -44,19 +43,19 @@ export const Header = () => {
     </li>
 
   return (
-    <Navbar>
-      <Brand>
+    <nav className='navbar'>
+      <div className='brand'>
         <Link to='/'>
           <Logo />
         </Link>
-      </Brand>
-      <NavItem>
+      </div>
+      <ul className='navbar__item'>
         {
           loading
             ? <BlockLoading />
             : menu.map(renderOptions)
         }
-      </NavItem>
-    </Navbar>
+      </ul>
+    </nav>
   )
 }

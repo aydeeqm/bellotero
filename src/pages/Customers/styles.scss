@@ -1,10 +1,4 @@
-import styled from 'styled-components'
-
-const WrapperContainer = styled.section`
-  padding: 150px 175px;
-`
-
-const Container = styled.div`
+.container__customer {
   display: grid;
   grid-template-columns: 420px 400px 80px 60px 60px;
   grid-template-rows: 56px 80px 254px 20px 20px;
@@ -19,9 +13,9 @@ const Container = styled.div`
     font-style: normal;
     line-height: 1.11;
     letter-spacing: 0.77px;
-    color: #ffffff;
+    color: var(--white);
     height: 56px;
-    background-color: #071eb3;
+    background-color: var(--blue);
   }
 
   & .slider {
@@ -32,7 +26,7 @@ const Container = styled.div`
     padding: 32px;
     width: 1002px;
     height: 254px;
-    background-color: #ffffff;
+    background-color: var(--white);
   }
 
   & .slider__name {
@@ -42,7 +36,7 @@ const Container = styled.div`
     font-style: normal;
     line-height: 1.5;
     letter-spacing: normal;
-    color: #161616;
+    color: var(--black);
   }
 
   & .slider__position {
@@ -52,7 +46,7 @@ const Container = styled.div`
     font-style: normal;
     line-height: normal;
     letter-spacing: normal;
-    color: #a5a5a5;
+    color: var(--greyish);
   }
 
   & .slider__comment {
@@ -62,7 +56,7 @@ const Container = styled.div`
     font-style: normal;
     line-height: 1.33;
     letter-spacing: normal;
-    color: #161616;
+    color: var(--black);
   }
 
   & .navigate {
@@ -77,7 +71,7 @@ const Container = styled.div`
 
   & .navigate__counter {
     align-items: center;
-    background-color: #071eb3;
+    background-color: var(--blue);
     display: flex;
     font-family: 'Linden Hill', serif;
     font-size: 32px;
@@ -86,16 +80,16 @@ const Container = styled.div`
     justify-content: center;
     line-height: 1;
     letter-spacing: 0.69px;
-    color: #ffffff;
+    color: var(--white);
   }
 
   & .navigate__buttons {
-    background-color: #071eb3;
+    background-color: var(--blue);
 
     & button {
       background-color: transparent;
       border: none;
-      color: #ffffff;
+      color: var(--white);
       cursor: pointer;
       height: 100%;
       width: 60px;
@@ -104,13 +98,4 @@ const Container = styled.div`
       outline: none;
     }
   }
-`
-const Title = styled.div`
-  background-color: #071eb3;
-`
-
-export {
-  WrapperContainer,
-  Container,
-  Title
 }

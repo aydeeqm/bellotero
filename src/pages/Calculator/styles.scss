@@ -1,0 +1,239 @@
+.container{
+  column-gap: 3%;
+  display: grid;
+  grid-template-columns: 40% 340px 360px;
+  grid-template-rows: repeat(3, 1fr);
+  row-gap: 25px;
+
+  & .title {
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    font-size: 36px;
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.11;
+    letter-spacing: 0.77px;
+    div {
+      align-self: start;
+      background-color: var(--blue);
+      padding: 8px 5px;
+    }
+
+    div:first-child {
+      margin-bottom: 5px;
+    }
+  }
+
+  & .description {
+    color: var(--black);
+    font-size: 16px;
+    font-stretch: normal;
+    font-style: normal;
+    font-weight: normal;
+    height: 120px;
+    letter-spacing: normal;
+    line-height: 1.5;
+    grid-column: 1/2;
+    grid-row: 2/3;
+    width: 349px;
+  }
+
+  & .monthly,
+  & .fulltime {
+    grid-column: 2/4;
+  }
+
+  & .food__cost {
+    grid-column: 2/3;  
+  }
+
+  & .annual {
+    grid-column: 3/4;
+  }
+
+  & .total__title {
+    color: var(--blue);
+    font-size: 72px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: 1px;
+    text-align: right;
+
+    span {
+      font-size: 36px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.11;
+      letter-spacing: 0.77px;
+    }
+  }
+
+  & .total__description {
+    color: var(--black);
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    padding: 15px 0 0;
+  }
+
+  & .total__description--align {
+    @extend .total__description;
+    text-align: right;
+  }
+
+  & .info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  & .info__description {
+    color: var(--black);
+    border-radius: 4px;
+    border: solid 1px #d6dcff;
+    background-color: var(--white);
+    font-size: 36px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    height: 52px;
+    line-height: 1.11;
+    letter-spacing: 0.77px;
+    text-align: right;
+    width: 190px;
+
+    span {
+      font-size: 24px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.67;
+      letter-spacing: 0.51px;
+      color: var(--black);
+    }
+  }
+
+  & .info__description--size {
+    @extend .info__description;
+      width: 67px;
+  }
+}
+
+.align-center {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+
+.container__range{
+  & .input-range__slider {
+    appearance: none;
+    border: solid 5px var(--blue);
+    background-color: var(--white);
+    border-radius: 100%;
+    box-shadow: 0 2px 8px 0 rgba(7, 30, 179, 0.24);
+    cursor: pointer;
+    display: block;
+    height: 1rem;
+    margin-left: -0.5rem;
+    margin-top: -0.65rem;
+    outline: none;
+    position: absolute;
+    top: 50%;
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+    width: 1rem; 
+  }
+  & .input-range__slider:active {
+    transform: scale(1.3); 
+  }
+  & .input-range__slider:focus {
+    box-shadow: 0 0 0 5px rgba(63, 81, 181, 0.2); 
+  }
+  & .input-range--disabled {
+    background: #cccccc;
+    border: 1px solid #cccccc;
+    box-shadow: none;
+    transform: none;
+  }
+
+  & .input-range__slider-container {
+    transition: left 0.3s ease-out; 
+  }
+
+  & .input-range__label {
+    color: transparent;
+    font-size: 0.8rem;
+    transform: translateZ(0);
+    white-space: nowrap;
+  }
+
+  & .input-range__label--min,
+  & .input-range__label--max {
+    bottom: -1.4rem;
+    position: absolute;
+  }
+
+  & .input-range__label--min {
+    left: 0;
+  }
+
+  & .input-range__label--max {
+    right: 0;
+  }
+
+  & .input-range__label--value {
+    position: absolute;
+    top: -1.8rem;
+  }
+
+  & .input-range__label-container {
+    left: -50%;
+    position: relative;
+  }
+
+  & .input-range__label--max,
+  & .input-range__label-container {
+    left: 50%;
+  }
+
+  & .input-range__track {
+    background-color: #f0f2ff;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    display: block;
+    height: 0.3rem;
+    position: relative;
+    transition: left 0.3s ease-out, width 0.3s ease-out;
+  }
+
+  & .input-range--disabled,
+  & .input-range__track {
+    background-color: #f0f2ff;
+  }
+
+  & .input-range__track--background {
+    left: 0;
+    margin-top: -0.15rem;
+    position: absolute;
+    right: 0;
+    top: 50%; }
+
+  & .input-range__track--active {
+    background-color: var(--blue); 
+  }
+
+  & .input-range {
+    height: 1rem;
+    position: relative;
+    width: 100%;
+  }
+}

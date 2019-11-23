@@ -1,21 +1,24 @@
 import React, { Suspense } from 'react'
-import { Router } from '@reach/router'
+import { Router, Redirect } from '@reach/router'
 import { Header } from '../../components/layout/Header'
+import { BlockLoading } from '../../components/BlockLoading'
+import './styles.scss'
 
 const PageOne = React.lazy(() => import('../Customers'))
-
-const BlockLoading = () => <p>Loading...</p>
+const PageTwo = React.lazy(() => import('../Calculator'))
 
 const Home = () => {
   return (
     <div>
       <Header />
       <Suspense fallback={<BlockLoading />}>
-        <div>
+        <section className='wrapper-container'>
           <Router>
+            <Redirect from='/' to='page-1' />
             <PageOne path='page-1' />
+            <PageTwo path='page-2' />
           </Router>
-        </div>
+        </section>
       </Suspense>
     </div>
   )
